@@ -13,6 +13,7 @@ class EmojiArtDocumentStore: ObservableObject {
     
     let name: String
     private var autosave: AnyCancellable?
+    private var directory: URL?
     
     var documents: [EmojiArtDocument] {
         documentNames.keys.sorted { documentNames[$0]! < documentNames[$1]! }
@@ -27,6 +28,20 @@ class EmojiArtDocumentStore: ObservableObject {
         }
     }
     
+    init(directory: URL) {
+        self.name = directory.lastPathComponent
+        self.directory = directory
+        do {
+            let documents = try FileManager.default.contentsOfDirectory(atPath: directory.path)
+            for document in documents {
+                let emojiArtDocument = EmojiArtDocument(url: directory.appendingPathComponent(document))
+                self.documentNames[emojiArtDocument] = document
+            }
+        } catch {
+            print("EmojiArtDocumentStore: couldn't create store from directory \(directory): \(error.localizedDescription)")
+        }
+    }
+    
     func name(for document: EmojiArtDocument) -> String {
         if documentNames[document] == nil {
             documentNames[document] = "Untitled"
@@ -35,16 +50,35 @@ class EmojiArtDocumentStore: ObservableObject {
     }
     
     func setName(_ name: String, for document: EmojiArtDocument) {
-        documentNames[document] = name
+        if let url = directory?.appendingPathComponent(name) {
+            if !documentNames.values.contains(name) {
+                removeDocument(document)
+                document.url = url
+                documentNames[document] = name
+            }
+        } else {
+             documentNames[document] = name
+        }
     }
     
     
     func addDocument(named name: String = "Untitled") {
-        documentNames[EmojiArtDocument()] = name
+        let uniqueName = name.uniqued(withRespectTo: documentNames.values)
+        let document: EmojiArtDocument
+        if let url = directory?.appendingPathComponent(uniqueName) {
+            document = EmojiArtDocument(url: url)
+        } else {
+            document = EmojiArtDocument()
+        }
+        documentNames[document] = uniqueName
     }
 
     func removeDocument(_ document: EmojiArtDocument) {
+        if let name = documentNames[document], let url = directory?.appendingPathComponent(name) {
+            try? FileManager.default.removeItem(at: url)
+        }
         documentNames[document] = nil
+        
     }
     
 }
