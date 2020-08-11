@@ -12,6 +12,7 @@
 		FA4A395224E17AB8001B17D9 /* OptionalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A395124E17AB8001B17D9 /* OptionalImageView.swift */; };
 		FA719B1724E189630083FFBF /* AnimatableSystemFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA719B1624E189630083FFBF /* AnimatableSystemFontModifier.swift */; };
 		FA719B1924E1AE450083FFBF /* SpinningModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA719B1824E1AE450083FFBF /* SpinningModifier.swift */; };
+		FAF1D97724E2FE8500D75E31 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1D97624E2FE8500D75E31 /* ImagePickerView.swift */; };
 		FAF4D67924E1B73400847470 /* PaletteChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4D67824E1B73400847470 /* PaletteChooserView.swift */; };
 		FAF4D67B24E1B9C700847470 /* EmojiArtDocument+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4D67A24E1B9C700847470 /* EmojiArtDocument+Palette.swift */; };
 		FAF4D67E24E1D85500847470 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4D67C24E1D85400847470 /* Grid.swift */; };
@@ -34,6 +35,7 @@
 		FA4A395124E17AB8001B17D9 /* OptionalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageView.swift; sourceTree = "<group>"; };
 		FA719B1624E189630083FFBF /* AnimatableSystemFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableSystemFontModifier.swift; sourceTree = "<group>"; };
 		FA719B1824E1AE450083FFBF /* SpinningModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningModifier.swift; sourceTree = "<group>"; };
+		FAF1D97624E2FE8500D75E31 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		FAF4D67824E1B73400847470 /* PaletteChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteChooserView.swift; sourceTree = "<group>"; };
 		FAF4D67A24E1B9C700847470 /* EmojiArtDocument+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojiArtDocument+Palette.swift"; sourceTree = "<group>"; };
 		FAF4D67C24E1D85400847470 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				FA4A395124E17AB8001B17D9 /* OptionalImageView.swift */,
 				FAF4D67824E1B73400847470 /* PaletteChooserView.swift */,
 				FAFBAA8A24E1EB32000E6E51 /* EmojiArtDocumentChooserView.swift */,
+				FAF1D97624E2FE8500D75E31 /* ImagePickerView.swift */,
 				FAFBAA8C24E1FDA7000E6E51 /* EditableText.swift */,
 				FAF4D67C24E1D85400847470 /* Grid.swift */,
 				FAF4D67D24E1D85500847470 /* GridLayout.swift */,
@@ -201,6 +204,7 @@
 				FA719B1724E189630083FFBF /* AnimatableSystemFontModifier.swift in Sources */,
 				FAFAA05124E0A7B70080F20F /* EmojiArtDocument.swift in Sources */,
 				FAF4D67E24E1D85500847470 /* Grid.swift in Sources */,
+				FAF1D97724E2FE8500D75E31 /* ImagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
